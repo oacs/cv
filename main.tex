@@ -1,0 +1,162 @@
+%-------------------------
+% Resume in Latex
+%------------------------
+
+\documentclass[letterpaper,10.8pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+
+\urlstyle{rm}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-3pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+      \textbf{#1}{: #2 \vspace{-2pt}}
+    }
+  }
+
+  \newcommand{\resumeItemWithoutTitle}[1]{
+  \item\small{
+      {\vspace{-2pt}}
+    }
+  }
+
+  \newcommand{\resumeSubheading}[4]{
+    \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+  }
+
+
+  \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+  \renewcommand{\labelitemii}{$\circ$}
+
+  \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+  \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+  \newcommand{\resumeItemListStart}{\begin{itemize}}
+  \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+  %-------------------------------------------
+  %%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+  \begin{document}
+
+  %----------HEADING-----------------
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{{\LARGE Oscar Castillejo}} \\
+    \href{https://www.linkedin.com/in/oscar-castillejo/}{Linkedin: https://www.linkedin.com/in/oscar-castillejo/} & Email : \href{mailto:oscar.castillejo.sa@gmail.com}{oscar.castillejo.sa@gmail.com}\\
+    \href{https://github.com/oacs}{Github: https://github.com/oacs} & Mobile : +1-647-615-3226 \\
+  \end{tabular*}
+
+  %-----------EDUCATION-----------------
+  \section{Education}
+  \resumeSubHeadingListStart
+  \resumeSubheading
+  {Universidad Católica Andrés Bello}{Guayana, VE}
+  {Computer Science}{Aug 2015 - Dec 2020}
+  \resumeSubHeadingListEnd
+
+  %
+  %--------PROGRAMMING SKILLS------------
+  \section{Skills Summary}
+  \resumeSubHeadingListStart
+  \resumeSubItem{Languages}{Typescript, Javascript, PostgreSQL, MySQL, DynamoDB, GraphQL, Java, Go, SASS, CSS}
+  \resumeSubItem{Framework \& Libraries}{Express.js, Node.js, React.js (Redux), Vue.js (Vuex), TailwindCSS, Apollo, Rxjs}
+  \resumeSubItem{Tools}{AWS, Git, Docker, Jest, Cypress, Webpack, Jira, Confluence, Figma}
+  \resumeSubHeadingListEnd
+
+
+
+  %-----------EXPERIENCE-----------------
+  \section{Experience}
+  \resumeSubHeadingListStart
+  \resumeSubheading
+  {Finastra}{Mississauga, CA}
+  {Software Engineer Technical Lead }{May 2022 -  Current}
+  \resumeItemListStart
+  \resumeItem{Technical desicion making}
+  {Led an international team of 10 developers to disrupt the Canadian mortgage industry taking care of code reviews, splitting efforts, design improvements and promoting quality code of 3 products}
+  \resumeItem{Directing the Release Process}
+  {Directed the release process with live support of 7 major features for the Expert Pro product and more than 20 hotfixes and small enhancements}
+  \resumeItem{Core Feature Designer}{Learned to be fully in touch with the Product, working closely with Product Owners and making
+  technical decisions to optimize current workflows and ease of development}
+  \resumeItem{AWS Services Expertise}{Frequently use various AWS services (RDS, DynamoDB, Api Gateway, SQS, Lamda, S3, CloudWatch) }
+  \resumeItem{Development Internship Program Director}{Designed and led our development internship program. This included: interviewing potential candidates; leading a team of interns to improve a web client, API, infrastructure and CI/CD; and work with project managers and stakeholders to ensure timely delivery}
+  \resumeItem{Recognized for Outstanding Performance}{Awarded 9 times within the organization for innovation, leading the team to success, outstanding performance and manage to solve critical situations on vacations}
+  \resumeItemListEnd
+
+  \resumeSubheading
+  {Doorr, adquired by Finastra}{Mississauga, CA}
+  {Founding Software Engineer}{Aug 2020 -  May 2022}
+  \resumeItemListStart
+
+  \resumeItem{Library Compatibility Manager}
+  {Ensured dependencies and libraries were compatible and up to date with latest releases}
+  \resumeItem{Startup Contributor.}
+  {One of three Back-end engineer at a startup that raised \~\$1 million in Series A seed funding design the foundations of our core features such as CRM, Automations, External API, Websockets for real time updates and (i18n) solution on a full-stack perspective and always bringing ideas on how to improve all the process on the company}
+  \resumeItem{Production Code Fixer}
+  {Promptly addressed client-facing issues reported by the Customer Success team delivering hotfixes to increase customers satisfaction on quick response times}
+  \resumeItemListEnd
+
+  \resumeSubheading
+  {Telesero }{United States}
+  {Frontend Developer}{Aug 2019 - Mar 2020}
+  \resumeItemListStart
+  \resumeItem{ Legacy Code Migration Specialist}
+  { Migrated legacy code to modern technologies such as React, Redux, and NodeJS, improving the performance and UI/UX of the system increasing the customers satisfaction with lower response time from 5 seconds to 1 second of load time }
+\resumeItem{Dashboard and Monitor Web App Designer}
+  { Designed a Dashboard and Monitor web app from scratch with real time updates using Websocket and  Rxjs }
+\resumeItem{Material Design Implementation Specialist}
+  { Revamped the look and feel of the company’s following the Material Design Patterns using Styled components, resulting in overall better UI/UX }
+  \resumeItemListEnd
+
+
+  \resumeSubheading
+  { Pintosoft }{ Venezuela }
+  { Lead Web Developer }  { Jul 2018 - Mar 2019 }
+  \resumeItemListStart
+  \resumeItem{Crypto Gaming Web App Designer}
+  { Design web apps to motivate the usage of the company crypto currency with games and gambling features }
+  \resumeItemListEnd
+  \resumeSubHeadingListEnd
+  %-------------------------------------------
+  \end{document}
+
+
+
