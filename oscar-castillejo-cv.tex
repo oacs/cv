@@ -1,5 +1,5 @@
 %-------------------------
-% Resume in Late
+% Resume in Latex
 %------------------------
 
 \documentclass[letterpaper,10.8pt]{article}
@@ -13,6 +13,9 @@
 \usepackage{enumitem}
 \usepackage[pdftex]{hyperref}
 \usepackage{fancyhdr}
+\usepackage[T1]{fontenc}
+\usepackage{palatino}
+\usepackage{anyfontsize}
 
 \hypersetup{hidelinks}
 
@@ -35,16 +38,20 @@
 \raggedright
 \setlength{\tabcolsep}{0in}
 
+\newcommand{\normalFont}[1]{\fontsize{9.5pt}{11pt}{\selectfont{#1}}}
+\newcommand{\largeFont}[1]{\fontsize{11pt}{11pt}{\selectfont{#1}}}
+\newcommand{\LargeFont}[1]{\fontsize{12.5pt}{13pt}{\selectfont{#1}}}
+
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-3pt}\scshape\raggedright\large
+  \fontsize{13pt}{13pt}\selectfont\bfseries\raggedright
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 %-------------------------
 % Custom commands
 \newcommand{\resumeItem}[2]{
-  \item\small{
-      \textbf{#1}{: #2 \vspace{-2pt}}
+  \item{
+      \small\textbf{#1}{: #2 \vspace{-4pt}}
     }
   }
 
@@ -53,114 +60,129 @@
       {\vspace{-2pt}}
     }
   }
+
   % Professional Summary
   \newcommand{\resumeSummary}[1]{
-    \vspace{5pt}
-    \textit{#1}\par
+    \normalFont{#1}\par\vspace{-5pt}
   }
-  \newcommand{\resumeSubheading}[4]{
-    \vspace{-1pt}\item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
+  \newcommand{\resumeSubheading}[5]{
+    \begin{tabular*}{1\textwidth}{l@{\extracolsep{\fill}}r}
+      \largeFont{\textbf{#1}} | \normalFont{#3} & \small{#4} \\
+      {\normalFont{Stack: } #5} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-8pt}
+  }
+
+  \newcommand{\educationSubheading}[4]{
+    \begin{tabular*}{1\textwidth}{l@{\extracolsep{\fill}}r}
+      \largeFont{\textbf{#1}} & \small{#4} \\
+      {\small #3} & \textit{\small #2} \\
     \end{tabular*}\vspace{-5pt}
   }
 
 
-  \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+  \newcommand{\skillItem}[2]{
+    \item {
+      \normalFont{\textbf{#1}{: #2 \vspace{-5pt}}}
+    }}
 
   \renewcommand{\labelitemii}{$\circ$}
 
   \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
   \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
   \newcommand{\resumeItemListStart}{\begin{itemize}}
-  \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+  \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{4pt}}
 
   %-------------------------------------------
   %%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-  \begin{document}
+\begin{document}
 
-  %----------HEADING-----------------
-  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-    \textbf{{\LARGE Oscar Castillejo}} \\
-    \href[pdfnewwindow=true]{https://www.linkedin.com/in/oscar-castillejo/}{Linkedin: https://www.linkedin.com/in/oscar-castillejo/} & Email : \href{mailto:oscar.castillejo.sa@gmail.com}{oscar.castillejo.sa@gmail.com}\\
-    \href[pdfnewwindow=true]{https://github.com/oacs}{Github: https://github.com/oacs} & Mobile : +1-647-615-3226 \\
-  \end{tabular*}
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{{\LARGE Oscar Castillejo}} \\
+  \normalFont{\href[pdfnewwindow=true]{https://www.linkedin.com/in/oscar-castillejo/}{Linkedin: https://www.linkedin.com/in/oscar-castillejo/}} & \normalFont{\href{mailto:oscar.castillejo.sa@gmail.com}{Email: oscar.castillejo.sa@gmail.com}}\\
+  \normalFont{\href[pdfnewwindow=true]{https://github.com/oacs}{Github: https://github.com/oacs}} & \normalFont{Mobile: +1-647-615-3226} \\
+\end{tabular*}\vspace{-5pt}
 
-  %-----------SUMMARY-----------------
-  \section{Summary}
-  \resumeSummary{Senior Software Developer(5+ years) with a strong background in Web and Mobile development using technologies such as Typescript, React.js (Redux), and AWS. I was a founding software engineer at Doorr, where I contributed to raising \~\$1 million in Series A seed funding and promptly addressed client-facing issues. Holds a Computer Science degree. Seeking a challenging role as a Backend developer.}
-  %-----------EDUCATION-----------------
-  \section{Education}
-  \resumeSubHeadingListStart
-  \resumeSubheading
-  {Universidad Católica Andrés Bello}{Guayana, VE}
-  {Computer Science}{Aug 2015 - Dec 2020}
-  \resumeSubHeadingListEnd
+%-----------SUMMARY-----------------
+\section{Summary}
+\resumeSummary{Senior Software Developer (5+ years) with a strong background in Web Development using technologies such as Typescript, React.js (Redux), and AWS services. Recognized 9 times for outstanding performance. Founding software engineer at fin-tech startup, contributed to raising \~\$1 million in Series A seed funding and promptly addressed client-facing issues. Currently seeking a challenging role as a Backend developer}
 
-  %
-  %--------PROGRAMMING SKILLS------------
-  \section{Skills Summary}
-  \resumeSubHeadingListStart
-  \resumeSubItem{Languages}{Typescript, Javascript, PostgreSQL, MySQL, DynamoDB, GraphQL, Java, Go, SASS, CSS, Python}
-  \resumeSubItem{Framework \& Libraries}{Express.js, Node.js, React.js (Redux), Vue.js (Vuex), TailwindCSS, Apollo, Rxjs, Nestjs}
-  \resumeSubItem{Tools}{AWS, Git, Docker, Jest, Cypress, Webpack, Jira, Confluence, Figma}
-  \resumeSubHeadingListEnd
+
+%
+%--------PROGRAMMING SKILLS------------
+\section{Skills}
+\resumeSubHeadingListStart
+\skillItem{Languages}{Typescript, Javascript, SQL, NoSQL, GraphQL, Java, Go, SCSS, CSS3}
+\skillItem{Framework \& Libraries}{Express.js, Node.js, React.js (Redux), Vue.js (Vuex), TailwindCSS, Apollo, Rxjs, Jest, Cypress}
+\skillItem{Tools}{AWS (RDS, DynamoDB, Api Gateway, SQS, Lamda, S3, CloudWatch), Git, Docker, Webpack, Jira, Figma, PostgreSQL}
+\resumeSubHeadingListEnd
 
 
 
-  %-----------EXPERIENCE-----------------
-  \section{Experience}
-  \resumeSubHeadingListStart
-  \resumeSubheading
-  {Finastra}{Mississauga, CA}
-  {Software Engineer Technical Lead }{May 2022 -  Feb 2023}
-  \resumeItemListStart
-  \resumeItem{Technical desicion making}
-  {Led an international team of 10 developers to disrupt the Canadian mortgage industry taking care of code reviews, splitting efforts, design improvements and promoting quality code of 3 products}
-  \resumeItem{Directing the Release Process}
-  {Directed the release process with live support of 7 major features for the Expert Pro product and more than 20 hotfixes and small enhancements}
-  \resumeItem{Core Feature Designer}{Redesigned key workflows, resulting in a 25\% increase in productivity (measured by decreased time to completion) and a streamlined, user-friendly experience. Worked with Product Owners to optimize workflows based on requirements.}
-  \resumeItem{AWS Services Expertise}{Frequently use various AWS services (RDS, DynamoDB, Api Gateway, SQS, Lamda, S3, CloudWatch) }
-  \resumeItem{Development Internship Program Director}{Designed and Directed our development internship program. This included: interviewing potential candidates; leading a team of interns to improve a web client, API, infrastructure and CI/CD; and work with project managers and stakeholders to ensure timely delivery}
-  \resumeItem{Recognized for Outstanding Performance}{Awarded 9 times within the organization for innovation, leading the team to success, outstanding performance and manage to solve critical situations on vacations}
-  \resumeItemListEnd
+%-----------EXPERIENCE-----------------
+\section{Experience}
 
-  \resumeSubheading
-  {Doorr, acquired by Finastra}{Mississauga, CA}
-  {Founding Software Engineer}{Aug 2020 -  May 2022}
-  \resumeItemListStart
+\resumeSubheading
+{Software Engineer Technical Lead}{Mississauga, CA}
+{Finastra}{May 2022 -  Feb 2023}
+{Vue.js, Vuex, SCSS, Typescript, AWS Services, SQL, GraphQL, Express.js, Java, CircleCI}
 
-  \resumeItem{Library Compatibility Manager}
-  {Ensured dependencies and libraries were compatible and up to date with latest releases avoiding more than 120 vulnerabilities on the products}
-  \resumeItem{Startup Contributor}
-  {One of three Back-end engineer at a startup that raised \~\$1 million in Series A seed funding design the foundations of core features such as CRM, Automations, External API, Websockets for real time updates and (i18n) solution on a full-stack perspective and always bringing ideas on how to improve all the process on the company}
-  \resumeItem{Production Code Fixer}
-  {Promptly addressed client-facing issues reported by the Customer Success team delivering hotfixes to increase customers satisfaction on quick response times}
-  \resumeItemListEnd
+\resumeItemListStart
+\resumeItem{Technical Desicion Architect}
+{Led an international team of 10 developers to disrupt the Canadian mortgage industry taking care of code reviews, splitting efforts, design improvements and promoting high-quality code}
+\resumeItem{Release Process Coordinator}
+{Directed the release process with live support of 7 major features for the Expert Pro product and more than 20 hotfixes and small enhancements}
+\resumeItem{Core Feature Designer}{Redesigned key workflows in collaboration with product owners based on their requirements, resulting in a 25\% increase in productivity measured by a reduction in time to completion and an improved user experience}
+\resumeItem{Development Internship Program Director}{Designed and Directed the development internship program by interviewing potential candidates; leading a team of interns to improve a web client, API, infrastructure and CI/CD; and work with project managers and stakeholders to ensure timely delivery}
+\resumeItem{Recognized for Outstanding Performance}{Awarded 9 times within the organization for innovation, leading the team to success, outstanding performance and manage to solve critical situations on vacations}
+\resumeItemListEnd
 
-  \resumeSubheading
-  {Telesero }{United States}
-  {Frontend Developer}{Aug 2019 - Mar 2020}
-  \resumeItemListStart
-  \resumeItem{Legacy Code Migration Specialist}
-  {Migrated legacy code to technologies such as React, Redux, improving the performance of the system with lower response time from 5 seconds to 1 second of load time }
-  \resumeItem{Dashboard and Monitor Web App Designer}
-  {Designed a Dashboard and Monitor web app from scratch with real-time updates using Websocket and Rxjs, enhancing data representation through the implementation of interactive charts and graphs}
-  \resumeItem{Material Design Implementation Specialist}
-  {Revamped the look and feel of the company’s following the Material Design Patterns using Styled components, resulting in overall better UI/UX Improved user satisfaction by 90\% with the implementation of intuitive navigation and better visual design elements }
-  \resumeItemListEnd
+\resumeSubheading
+{Founding Software Engineer}{Mississauga, CA}
+{Doorr (acquired by Finastra)}{Aug 2020 -  May 2022}
+{Vue.js, Vuex, SCSS, Typescript, AWS Services, SQL, GraphQL, Express.js, Java, CircleCI}
 
+\resumeItemListStart
+\resumeItem{Library Compatibility Manager}
+{Ensured dependencies and libraries were compatible and up to date with latest releases avoiding more than 120 vulnerabilities on the products}
+\resumeItem{Startup Contributor}
+{One of three Back-end engineer at a startup that raised \~\$1 million in Series A seed funding design the foundations of core features such as CRM, Automations, External API, Websockets for real time updates and (i18n) solution on a full-stack perspective and always bringing ideas on how to improve all the process on the company}
+\resumeItem{Production Code Fixer}
+{Increased customers satisfaction by promptly addressing client-faced issues reported by the Customer Success team with quick response times and effective solutions}
+\resumeItemListEnd
 
-  \resumeSubheading
-  {Pintosoft }{ Venezuela }
-  {Lead Web Developer }  { Jul 2018 - Mar 2019 }
-  \resumeItemListStart
-  \resumeItem{Crypto Gaming Web App Designer}
-  {Design web apps to motivate the usage of the company crypto currency with games and gambling features }
-  \resumeItemListEnd
-  \resumeSubHeadingListEnd
-  %-------------------------------------------
-  \end{document}
+\resumeSubheading
+{Frontend Developer}{United States}
+{Telesero}{Aug 2019 - Mar 2020}
+{React.js, Redux, Rxjs, SCSS, Styled components, Figma}
+
+\resumeItemListStart
+\resumeItem{Legacy Code Migration Specialist}
+{Migrated legacy code to technologies such as React, Redux, improving the performance of the system with lower response time from 5 seconds to 1 second of load time }
+\resumeItem{Material Design Expert}
+{Revamped the look and feel of the company’s products following the Material Design Patterns using Styled components, resulting in overall better UI/UX and improved user satisfaction by 90\% with the implementation of intuitive navigation and better visual design elements }
+\resumeItem{Dashboard and Monitor Web App Designer}
+{Designed a Dashboard and Monitor web app from scratch with real-time updates using Websocket and Rxjs, enhancing data representation by the implementation of interactive charts and graphs}
+\resumeItemListEnd
+
+\resumeSubheading
+{Lead Web Developer}{ Venezuela }
+{Pintosoft}{ Jul 2018 - Mar 2019 }
+{Vue.js, Angular, CSS3, Figma, Node.js}
+
+\resumeItemListStart
+\resumeItem{Crypto Gaming Web App Designer}
+{Design web apps to motivate the usage of the company crypto currency with games and gambling features }
+\resumeItemListEnd
+%-------------------------------------------
+
+%-----------EDUCATION-----------------
+\vspace{-8pt}
+\section{Education}
+\educationSubheading
+{Bachelor of Computer Science}{Guayana, VE}
+{Andres Bello Catholic University (UCAB)}{Aug 2014 - Sep 2020}
+
+\end{document}

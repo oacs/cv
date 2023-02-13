@@ -1,6 +1,6 @@
 
 %-------------------------
-% Cover Letter in Latex
+% Resume in Latex
 %------------------------
 
 \documentclass[letterpaper,10.8pt]{article}
@@ -14,6 +14,10 @@
 \usepackage{enumitem}
 \usepackage[pdftex]{hyperref}
 \usepackage{fancyhdr}
+\usepackage[T1]{fontenc}
+\usepackage{palatino}
+\usepackage{anyfontsize}
+
 \hypersetup{hidelinks}
 
 \pagestyle{fancy}
@@ -35,16 +39,20 @@
 \raggedright
 \setlength{\tabcolsep}{0in}
 
+\newcommand{\normalFont}[1]{\fontsize{9.5pt}{11pt}{\selectfont{#1}}}
+\newcommand{\largeFont}[1]{\fontsize{11pt}{11pt}{\selectfont{#1}}}
+\newcommand{\LargeFont}[1]{\fontsize{12.5pt}{13pt}{\selectfont{#1}}}
+
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-3pt}\scshape\raggedright\large
+  \fontsize{13pt}{13pt}\selectfont\bfseries\raggedright
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 %-------------------------
 % Custom commands
 \newcommand{\resumeItem}[2]{
-  \item\small{
-      \textbf{#1}{: #2 \vspace{-2pt}}
+  \item{
+      \small\textbf{#1}{: #2 \vspace{-4pt}}
     }
   }
 
@@ -53,44 +61,52 @@
       {\vspace{-2pt}}
     }
   }
+
   % Professional Summary
   \newcommand{\resumeSummary}[1]{
-    \vspace{5pt}
-    {#1}\par
+    \normalFont{#1}\par\vspace{-5pt}
+  }
+  \newcommand{\resumeSubheading}[5]{
+    \begin{tabular*}{1\textwidth}{l@{\extracolsep{\fill}}r}
+      \largeFont{\textbf{#1}} | \normalFont{#3} & \small{#4} \\
+      {\normalFont{Stack: } #5} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-8pt}
   }
 
+  \newcommand{\educationSubheading}[4]{
+    \begin{tabular*}{1\textwidth}{l@{\extracolsep{\fill}}r}
+      \largeFont{\textbf{#1}} & \small{#4} \\
+      {\small #3} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+  }
+
+
+  \newcommand{\skillItem}[2]{
+    \item {
+      \normalFont{\textbf{#1}{: #2 \vspace{-5pt}}}
+    }}
+
+  \renewcommand{\labelitemii}{$\circ$}
+
+  \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+  \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+  \newcommand{\resumeItemListStart}{\begin{itemize}}
+  \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{4pt}}
 
   %-------------------------------------------
   %%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-  \begin{document}
+\begin{document}
 
-  %----------HEADING-----------------
-  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-    \textbf{{\LARGE Oscar Castillejo}} \\
-    \href[pdfnewwindow=true]{https://www.linkedin.com/in/oscar-castillejo/}{Linkedin: https://www.linkedin.com/in/oscar-castillejo/} & Email : \href{mailto:oscar.castillejo.sa@gmail.com}{oscar.castillejo.sa@gmail.com}\\
-    \href[pdfnewwindow=true]{https://github.com/oacs}{Github: https://github.com/oacs} & Mobile : +1-647-615-3226 \\
-  \end{tabular*}
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{{\LARGE Oscar Castillejo}} \\
+  \normalFont{\href[pdfnewwindow=true]{https://www.linkedin.com/in/oscar-castillejo/}{Linkedin: https://www.linkedin.com/in/oscar-castillejo/}} & \normalFont{\href{mailto:oscar.castillejo.sa@gmail.com}{Email: oscar.castillejo.sa@gmail.com}}\\
+  \normalFont{\href[pdfnewwindow=true]{https://github.com/oacs}{Github: https://github.com/oacs}} & \normalFont{Mobile: +1-647-615-3226} \\
+\end{tabular*}\vspace{-5pt}
 
-  %-----------SUMMARY-----------------
-  \section{Cover Letter}
-  \resumeSummary{
-    Dear Hiring Manager,\\ \bigskip
-    I am writing to express my interest in the Backend Software Engineering role at KPN. As a seasoned software
-    engineer with experience in full lifecycle product development, I am confident that my technical understanding of cloud
-    systems and project management skills make me a strong candidate for this position. \\ \medskip
-    With more than 5 years of professional experience in programming languages such as Typescript/Javascript with Node.js
-    , I have a strong foundation in back-end and frontend application development, makes me a valuable asset to your team.\\ \medskip
-    I am particularly excited about the opportunity to work with a wide range of knowledge team at KPN, where I can bring my
-    passion for technology and my positive and result-oriented attitude to support the growth of the company. I am confident
-    in my ability to design, develop, and optimize customer-facing solutions while ensuring
-    performance, scalability, and testability. I also believe in the importance of sharing knowledge and learning from my peers,
-    and I am eager to foster a culture of transparency and communication in your engineering department.\\ \medskip
-    Thank you for considering my application. I look forward to the opportunity to join your international team and contribute
-    to KPN’s continued success. I have attached my resume and look forward to discussing my qualifications further.\\ \bigskip
-    Sincerely,\\ \smallskip
-    Oscar Castillejo
-  }
-  %-------------------------------------------
-  \end{document}
+%-----------SUMMARY-----------------
+\section{Summary}
+\resumeSummary{Dear Hiring Manager, \\ I am writing to express my interest in the Senior Software Engineering role at . As a seasoned software engineer with over five years of experience in full lifecycle product development, I am confident that my technical and project management skills make me a strong candidate for this position. My proficiency in both Web and Mobile application development, combined with my experience in creating and executing manual and automated tests, has sharpened my capability to develop robust and top-notch code. Additionally, my role as a subject matter expert for multiple products has provided me with the opportunity to mentor and assist new team members. I am eager to bring my technical and project management skills to  to contributed and grow with the company Thank you for considering my application. I look forward to the opportunity to further discuss my qualifications with you. Sincerely,}
+\end{document}
