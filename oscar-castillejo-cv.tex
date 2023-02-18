@@ -16,6 +16,13 @@
 \usepackage[T1]{fontenc}
 \usepackage{palatino}
 \usepackage{anyfontsize}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{Gudea}
+\usepackage[T1]{fontenc}
+
+\definecolor{mypink3}{RGB}{4 120 87}
+\definecolor{mypink2}{RGB}{6 95 70}
+\definecolor{mypink1}{RGB}{6 78 59}
 
 \hypersetup{hidelinks}
 
@@ -44,14 +51,15 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \fontsize{13pt}{13pt}\selectfont\bfseries\raggedright
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+  \color{mypink3}\fontsize{13pt}{13pt}\selectfont\bfseries\raggedright
+}{}{0em}{}[\color{mypink2}\titlerule \vspace{-5pt}]
 
 %-------------------------
 % Custom commands
 \newcommand{\resumeItem}[2]{
   \item{
-      \small\textbf{#1}{: #2 \vspace{-4pt}}
+      { #2 \vspace{-3.4pt}}
+      %\small\textbf{#1}{: #2 \vspace{-4pt}}
     }
   }
 
@@ -67,14 +75,14 @@
   }
   \newcommand{\resumeSubheading}[5]{
     \begin{tabular*}{1\textwidth}{l@{\extracolsep{\fill}}r}
-      \largeFont{\textbf{#1}} | \normalFont{#3} & \small{#4} \\
+      \largeFont{\color{mypink1}\textbf{#1}} | \normalFont{#3} & \small{#4} \\
       {\normalFont{Stack: } #5} & \textit{\small #2} \\
     \end{tabular*}\vspace{-8pt}
   }
 
   \newcommand{\educationSubheading}[4]{
     \begin{tabular*}{1\textwidth}{l@{\extracolsep{\fill}}r}
-      \largeFont{\textbf{#1}} & \small{#4} \\
+      \largeFont{\textbf{\color{mypink1}{#1}}} & \small{#4} \\
       {\small #3} & \textit{\small #2} \\
     \end{tabular*}\vspace{-5pt}
   }
@@ -82,7 +90,7 @@
 
   \newcommand{\skillItem}[2]{
     \item {
-      \normalFont{\textbf{#1}{: #2 \vspace{-5pt}}}
+        \normalFont{\textbf{\color{mypink1}{#1}}{: #2 \vspace{-5pt}}}
     }}
 
   \renewcommand{\labelitemii}{$\circ$}
@@ -100,14 +108,14 @@
 
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{{\LARGE Oscar Castillejo}} \\
+  \textbf{{\color{mypink3}\LARGE Oscar Castillejo} \\
   \normalFont{\href[pdfnewwindow=true]{https://www.linkedin.com/in/oscar-castillejo/}{Linkedin: https://www.linkedin.com/in/oscar-castillejo/}} & \normalFont{\href{mailto:oscar.castillejo.sa@gmail.com}{Email: oscar.castillejo.sa@gmail.com}}\\
   \normalFont{\href[pdfnewwindow=true]{https://github.com/oacs}{Github: https://github.com/oacs}} & \normalFont{Mobile: +1-647-615-3226} \\
 \end{tabular*}\vspace{-5pt}
 
 %-----------SUMMARY-----------------
 \section{Summary}
-\resumeSummary{Senior Software Developer (5+ years) with a strong background in Web Development using technologies such as Typescript, React.js (Redux), and AWS services. Recognized 9 times for outstanding performance. Founding software engineer at fin-tech startup, contributed to raising \~\$1 million in Series A seed funding and promptly addressed client-facing issues. Currently seeking a challenging role as a Backend developer}
+\resumeSummary{Senior Software Developer (5+ years) with a strong background in Web Development using technologies such as Typescript, React.js (Redux), and AWS services. Recognized 9 times for outstanding performance. Founding software engineer at fin-tech startup, contributed to raising \~\$1 million in Series A seed funding and promptly addressed client-facing issues. Currently seeking a challenging role as a Frontend developer}
 
 
 %
@@ -168,7 +176,7 @@
 \resumeItemListEnd
 
 \resumeSubheading
-{Lead Web Developer}{ Venezuela }
+{Frontend Developer}{ Venezuela }
 {Pintosoft}{ Jul 2018 - Mar 2019 }
 {Vue.js, Angular, CSS3, Figma, Node.js}
 
